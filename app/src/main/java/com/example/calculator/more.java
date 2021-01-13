@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class more extends AppCompatActivity {
 
-    Button sin,cos,tan;
+    Button sin,cos,tan,root;
     TextView result;
     EditText num;
     @Override
@@ -23,6 +23,7 @@ public class more extends AppCompatActivity {
         tan=findViewById(R.id.tan);
         num=findViewById(R.id.num);
         result=findViewById(R.id.result);
+        root=findViewById(R.id.root);
         getWindow().setFlags(
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
@@ -64,6 +65,16 @@ public class more extends AppCompatActivity {
                 d2=(Math.sin(d1)/Math.cos(d1));
                 result.setText("the result is "+d2);
 
+            }
+        });
+        root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int a;
+                a=Integer.parseInt(num.getText().toString());
+                double s;
+                s=Math.sqrt(a);
+                result.setText("The squre root is "+ s);
             }
         });
 
